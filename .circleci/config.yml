@@ -10,7 +10,7 @@ workflows:
           parallel: true
           parallelism: 5
           store_artifacts: true
-          working_directory: .
+          working_directory: cypress
           post-steps:
             - store_test_results:
                 path: cypress/results
