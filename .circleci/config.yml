@@ -5,4 +5,12 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run # "run" job comes from "cypress" orb
+      - cypress/install 
+      - cypress/run: # "run" job comes from "cypress" orb
+          requires:
+            - cypress/install
+          record: true
+          parallel: true
+          parallelism: 2
+          group: 2 machines
+
